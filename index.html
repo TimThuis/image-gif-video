@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./style.min.css">
+  </head>
+  <body>
+    <div id="main">
+      <div id="main-video">
+        <div id="container-svg"></div>
+        <div class="video video-large" onmousemove="scrollVideo(event, this)">
+          <img draggable="false" class="cover-img" src="./src/eric-still.jpg" alt="image-eric">
+          <div class="icons">
+            <img id="main-pause-icon" src="./src/pause-icon.svg" class="icon" alt="icon-play">
+            <img id="main-play-icon" src="./src/play-icon.svg" class="icon" alt="icon-pause">
+          </div>
+          <video src="./src/eric-video.mp4" alt="video-eric" poster='./src/eric-gif.gif'></video>
+        </div>
+      </div>
+      <!-- <div class="other-videos">
+        <div onclick="playSmallVideo(this)" class="video video-small">
+          <video src="./src/johan-video.mp4" alt="video-johan" poster='./src/johan-still.jpg'></video>
+        </div>
+        <div onclick="playSmallVideo(this)"class="video video-small">
+          <video src="./src/victor-video.mp4" alt="video-victor" poster='./src/victor-still.jpg'></video>
+        </div>
+        <div onclick="playSmallVideo(this)" class="video video-small">
+          <video id="margot" src="./src/margot-video.mp4" alt="video-margot" poster='./src/margot-still.jpg'></video>
+        </div> -->
+      <div>
+    </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script> -->
+  <script src="./main.js"></script>
+</html>

@@ -1,0 +1,81 @@
+body {
+	margin: 0;
+}
+
+#main {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	#main-video {
+		display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+	}
+	.video-large {
+    overflow: hidden;
+		height: 300px;
+		width: 300px;
+		border-radius: 50%;
+		position: relative;
+		.icon {
+			width: 72px;
+			z-index: 5;
+			margin-top: calc(50% - 36px);
+			margin-left: calc(50% - 36px);
+		}
+		#main-pause-icon {
+			opacity: 0;
+		}
+		video, img {
+			position: absolute;
+		}
+		video, .cover-img {
+			height: 300px;
+			top: 0;
+			left: 0;
+		}
+		.cover-img {
+			z-index: 10;
+			cursor: pointer;
+			transition: opacity 300ms ease;
+			&:hover {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+#container-svg {
+	position: absolute;
+	width: 326px;
+	height: 326px;
+}
+
+.other-videos {
+	position: absolute;
+	border: 1px solid blue;
+	.video {
+		background: rgba(0,0,0,0.75);
+		width: 128px;
+		height: 128px;
+		overflow: hidden;
+		border-radius: 50%;
+		position: absolute;
+		video {
+			height: 100%;
+		}
+	}
+	.video:first-child {
+		transform: translate(175%, -150%);
+	}
+	.video:nth-child(2) {
+		transform: translate(225%, -25%);
+	}
+	.video:nth-child(3) {
+		transform: translate(200%, 112%);
+	}
+	#margot {
+		margin-left: -50%;
+	}
+}
