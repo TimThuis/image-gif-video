@@ -54,16 +54,21 @@ body {
 
 .other-videos {
 	position: absolute;
-	border: 1px solid blue;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	opacity: 0;
 	.video {
-		background: rgba(0,0,0,0.75);
 		width: 128px;
 		height: 128px;
 		overflow: hidden;
 		border-radius: 50%;
 		position: absolute;
+		top: calc(50% - 64px);
+		left: calc(50% - 64px);
 		video {
 			height: 100%;
+			transition: transform 300ms ease;
 		}
 	}
 	.video:first-child {

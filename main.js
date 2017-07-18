@@ -1,20 +1,15 @@
-// Draggable.create(".box", {
-//   type: "x,y",
-//   bounds: ".main",
-//   throwProps: true
-// });
 
 
 // variables
 const doc = document.querySelector('#main');
 const mainVideo = document.querySelector('.video-large video');
 const mainImage = document.querySelector('.video-large img');
+let mainVideoClicked = false;
+
 const circleTl = new ProgressBar.Circle('#container-svg', {
   color: '#86BC25',
   strokeWidth: 4,
 });
-let mainVideoClicked = false;
-
 
 // event listeners
 mainImage.addEventListener('click', startMainVideo)
@@ -65,6 +60,18 @@ function showVideos() {
     opacity: 0.25,
     filter: 'grayscale(100%)'
   })
+
+  TweenMax.staggerFrom('.video-small', 1, {
+    x: 0,
+    y: 0,
+    scale: 0.75,
+    opacity: 0,
+    zIndex: -50,
+  }, 0.25)
+
+  TweenMax.to('.other-videos', 0, {
+    opacity: 1,
+  })
 }
 
 function scrollVideo(event, element) {
@@ -76,23 +83,6 @@ function scrollVideo(event, element) {
   }
 }
 
-// function playSmallVideo(videoEl) {
-//   const video = videoEl.querySelector('video');
-//   if (video.paused) {
-//     video.play();
-//     TweenMax.to(videoEl, 1, {
-//       width: '100vw',
-//       height: '100vh',
-//       borderRadius: '0%',
-//       x: 0,
-//       y: 0,
-//     })
-//   } else {
-//     video.pause();
-//     TweenMax.to(videoEl, 1, {
-//       width: '128px',
-//       height: '128px',
-//       borderRadius: '50%',
-//     })
-//   }
-// }
+function playSmallVideo(event, element) {
+  element.paused ? element.play() : element.pause();
+}
